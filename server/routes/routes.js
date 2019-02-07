@@ -1,3 +1,4 @@
+const express = require('express');
 // const passport = require('passport');
 // const http = require('http');
 const operatorsService = require('../services/operatorsService');
@@ -19,7 +20,8 @@ const addCORSHeader = (request, response, next) => {
   next();
 };
 
-module.exports = function(app) {
+module.exports = function (app) {
+  app.use(express.static('../frontend/dist'));
   app.get('/api/*', addCORSHeader);
   app.post('/api/webhook', addCORSHeader);
 

@@ -1,8 +1,8 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
-const HOST = process.env.HOST || 'localhost';
-const PORT = process.env.PORT || '9060';
+const HOST = process.env.HOST || '0.0.0.0';
+const PORT = process.env.PORT || '8080';
 
 module.exports = merge(common, {
   mode: 'development',
